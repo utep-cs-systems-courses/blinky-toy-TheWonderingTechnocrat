@@ -8,7 +8,7 @@
 redControl:
 	cmp #0,r12
 	jz off
-	bis #64, &P1OUT
+	bis #1, &P1OUT
 	pop r0
-off:	andb.#~64, &P1OUT
+off:	and.b#~1, &P1OUT
 	pop r0

@@ -8,5 +8,4 @@
 
 #define port2_Switches (SW1 | SW2 | SW3 | SW4)
 
-#endif
 
