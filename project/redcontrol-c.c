@@ -1,5 +1,5 @@
 #include <msp430.h>
-#include "led.h"
+#include "Switch.h"
 
 void redcontrol(int on)
 {

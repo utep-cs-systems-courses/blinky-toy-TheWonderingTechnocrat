@@ -2,13 +2,13 @@
 	.p2align 1,0
 	.text
 
-	.global redControl
+	.global redcontrol
 	.extern P1OUT
 
-redControl:
+redcontrol:
 	cmp #0,r12
 	jz off
 	bis #1, &P1OUT
 	pop r0
-off:	and.b#~1, &P1OUT
+off:	and.b #~1, &P1OUT
 	pop r0

@@ -1,7 +1,7 @@
 #makefile configuration
-COMMON_OBJECTS =  main.o redcontrol-c.o
+COMMON_OBJECTS  = main.o redcontrol-s.o Switch.o
 CPU		= msp430g2553
-CFLAGS		= -mmcu=${CPU} -I../h
+CFLAGS		= -mmcu=${CPU} -I../demos/h -I./11-buzzer
 LDFLAGS 	= -L/opt/ti/msp430_gcc/include
 
 #switch the compiler
@@ -10,13 +10,13 @@ AS 	= msp430-elf-as
 
 all: main.elf
 
-main.elf: ${COMMON_OBJECTS} redcontrol-c.o
-	${CC} ${CFLAGS} -o $@ $^
+main.elf: ${COMMON_OBJECTS} ./11-buzzer/buzzer.o 
+	${CC} ${CFLAGS} ${LDFLAGS} -o $@ $^ ../demos/lib/libTimer.a
 
 load: main.elf
 	msp430loader.sh $^
 
 clean: $^
-	rm -f*.o *.elf
+	rm -f *.o *.elf
 
 
