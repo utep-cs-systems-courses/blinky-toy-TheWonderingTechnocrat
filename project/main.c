@@ -12,7 +12,7 @@ int main(){
   led_init();
   buzzer_init();
   enableWDTInterrupts();
-  buzzer_set_period(1000);
+  //buzzer_set_period(1000);
   or_sr(0x18);
 }
 int play_set_one = 0 ;
@@ -44,7 +44,11 @@ void set_two()
   //buzzer_set_period(50);
   //buzzer_set_period(100);
 }
+void set_three()
+{
+  buzzer_set_period(0);
 
+}
 
   
 

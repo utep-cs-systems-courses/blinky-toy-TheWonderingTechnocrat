@@ -105,6 +105,7 @@ void __interrupt_vec(PORT2_VECTOR)Port_2()
   {
     P2IFG &= ~TSW3;
     Light_pattern(3);
+    set_three();
     led = 0;
     //switch_interrupt_handler();
   }
@@ -140,9 +141,9 @@ void toggle_green()
 void toggle_red()
 {
   if(P1OUT & LED_RED)
-    redcontrol(1);
-  else
     redcontrol(0);
+  else
+    redcontrol(1);
 }
 
 
